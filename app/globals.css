@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #fafaf9;
+  --color-foreground: #1c1917;
+  --color-primary: #022c22;
+  --color-primary-foreground: #e8f1ec;
+  --color-accent: #b45309;
+  --color-accent-foreground: #fff7ed;
+  --color-card: #ffffff;
+  --color-muted: #e7e5e4;
+  --color-border: #e7e5e4;
+  --radius: 0.85rem;
+  --shadow-soft: 0 25px 80px -40px rgba(2, 44, 34, 0.4),
+    0 20px 40px -30px rgba(0, 0, 0, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+  --color-card: var(--color-card);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-display);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at 20% 20%, #f2f0ec 0%, #fafaf9 35%),
+    radial-gradient(circle at 80% 10%, #edf3ee 0%, #fafaf9 25%),
+    #fafaf9;
+  color: var(--color-foreground);
+  font-family: var(--font-body), "Work Sans", system-ui, -apple-system, sans-serif;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-body), "Work Sans", system-ui, -apple-system, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(180, 83, 9, 0.12);
+  color: var(--color-foreground);
+}
+
+.glass-surface {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(231, 229, 228, 0.6);
+}
+
+.soft-shadow {
+  box-shadow: var(--shadow-soft);
+}
