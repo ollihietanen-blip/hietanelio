@@ -4,28 +4,26 @@ import StrategySection from "@/components/sections/strategy-section";
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
-      <main className="flex-1">
-        <section id="hero" aria-label="Hietaneliö Oy - johdanto">
-          <HeroSection />
-        </section>
+    <>
+      <section id="hero" aria-label="Hietaneliö Oy - johdanto">
+        <HeroSection />
+      </section>
 
-        <section
-          id="stats"
-          aria-label="Luottamusta vahvistavat perustelut"
-          className="scroll-mt-24"
-        >
-          <BentoStats />
-        </section>
+      <section
+        id="stats"
+        aria-label="Luottamusta vahvistavat perustelut"
+        className="scroll-mt-24"
+      >
+        <BentoStats />
+      </section>
 
-        <section
-          id="strategy"
-          aria-label="Asunnon ja hallin ostajalle"
-          className="scroll-mt-24"
-        >
-          <StrategySection />
-        </section>
-      </main>
-    </div>
+      <section
+        id="strategy"
+        aria-label="Asunnon ja hallin ostajalle"
+        className="scroll-mt-24"
+      >
+        <StrategySection />
+      </section>
+    </>
   );
 }

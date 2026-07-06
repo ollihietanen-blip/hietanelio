@@ -16,6 +16,11 @@ export const translations = {
       contactButton: "Ota yhteyttä",
       strategyButton: "Miksi luottaa",
       tagline: "Kankaanpäästä toimiva kiinteistö- ja kehitysyhtiö.",
+      metaFamily: "Perheyhtiö",
+      metaLocation: "Kankaanpää",
+      metaId: "Y-2954838-7",
+      contentsLabel: "Sisältö",
+      recordLabel: "Perheen sijoitusyhtiö",
       focus: "Ostajan varmistus",
       focusTitle: "Taustan pitää olla nopeasti ymmärrettävä.",
       focusDescription:
@@ -93,6 +98,11 @@ export const translations = {
       contactButton: "Get in touch",
       strategyButton: "Why trust us",
       tagline: "A real estate and development company based in Kankaanpää.",
+      metaFamily: "Family company",
+      metaLocation: "Kankaanpää",
+      metaId: "ID 2954838-7",
+      contentsLabel: "Contents",
+      recordLabel: "Family investment company",
       focus: "Buyer validation",
       focusTitle: "The background should be easy to understand.",
       focusDescription:

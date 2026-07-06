@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
+
+import { EntryHeader } from "@/components/entry-header";
 import { useLanguage } from "@/context/LanguageContext";
 
 const fadeUp: Variants = {
@@ -16,92 +18,77 @@ const fadeUp: Variants = {
 export default function StrategySection() {
   const { t } = useLanguage();
 
+  const cards = [
+    {
+      label: t.strategy.apartmentLabel,
+      title: t.strategy.apartmentTitle,
+      description: t.strategy.apartmentDescription,
+      src: "/hietanelio-huunala-interior.webp",
+      alt: "Asuntokohteen sisätila",
+      object: "object-[58%_center]",
+      ref: "A",
+    },
+    {
+      label: t.strategy.hallLabel,
+      title: t.strategy.hallTitle,
+      description: t.strategy.hallDescription,
+      src: "/hietanelio-hertc2-halli.jpg",
+      alt: "Hallikohde",
+      object: "object-center",
+      ref: "B",
+    },
+  ];
+
   return (
     <section className="bg-[#f3f1ec]">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-10 md:py-20">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(280px,0.55fr)] md:items-end"
-        >
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-8 bg-[#163a2f]/40" aria-hidden="true" />
-              <p className="overline text-[#163a2f]">{t.strategy.title}</p>
-            </div>
-            <h2 className="max-w-[720px] text-[clamp(2.2rem,5vw,4rem)] font-medium leading-[1.06] tracking-[-0.01em] text-foreground">
-              {t.strategy.heading}
-            </h2>
-          </div>
-          <p className="max-w-[460px] text-[17px] leading-[1.65] text-foreground/62">
-            {t.strategy.description}
-          </p>
-        </motion.div>
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-24">
+        <EntryHeader
+          index="02"
+          label={t.strategy.title}
+          heading={t.strategy.heading}
+          description={t.strategy.description}
+        />
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          <motion.article
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            custom={0.08}
-            className="group relative min-h-[350px] overflow-hidden bg-black text-white md:min-h-[460px]"
-          >
-            <Image
-              src="/hietanelio-huunala-interior.webp"
-              alt="Asuntokohteen sisätila"
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover object-[58%_center] transition-transform duration-700 group-hover:scale-[1.03]"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,24,20,0.02)_0%,rgba(8,24,20,0.78)_100%),linear-gradient(90deg,rgba(8,24,20,0.38),rgba(8,24,20,0.03))]" />
-            <div className="relative flex min-h-[350px] items-end p-6 md:min-h-[460px] md:p-8">
-              <div className="max-w-[520px]">
-                <p className="overline mb-4 text-[#d7c7ae]">
-                  {t.strategy.apartmentLabel}
-                </p>
-                <h3 className="text-[clamp(1.9rem,3.5vw,3.25rem)] font-medium leading-[1.08] tracking-[-0.01em] text-white">
-                  {t.strategy.apartmentTitle}
-                </h3>
-                <p className="mt-4 text-base leading-[1.62] text-white/78">
-                  {t.strategy.apartmentDescription}
-                </p>
-              </div>
-            </div>
-          </motion.article>
+        <div className="mt-14 grid gap-5 md:grid-cols-2">
+          {cards.map((card, index) => (
+            <motion.article
+              key={card.ref}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              custom={0.08 + index * 0.06}
+              className="group relative flex min-h-[380px] flex-col overflow-hidden bg-black text-white md:min-h-[480px]"
+            >
+              <Image
+                src={card.src || "/placeholder.svg"}
+                alt={card.alt}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className={`object-cover ${card.object} transition-transform duration-700 group-hover:scale-[1.03]`}
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,24,20,0.04)_0%,rgba(8,24,20,0.8)_100%),linear-gradient(90deg,rgba(8,24,20,0.34),rgba(8,24,20,0.03))]" />
 
-          <motion.article
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            custom={0.14}
-            className="group relative min-h-[350px] overflow-hidden bg-black text-white md:min-h-[460px]"
-          >
-            <Image
-              src="/hietanelio-hertc2-halli.jpg"
-              alt="Hallikohde"
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,24,20,0.06)_0%,rgba(8,24,20,0.76)_100%),linear-gradient(90deg,rgba(8,24,20,0.28),rgba(8,24,20,0.04))]" />
-            <div className="relative flex min-h-[350px] items-end p-6 md:min-h-[460px] md:p-8">
-              <div className="max-w-[520px]">
-                <p className="overline mb-4 text-[#d7c7ae]">
-                  {t.strategy.hallLabel}
-                </p>
-                <h3 className="text-[clamp(1.9rem,3.5vw,3.25rem)] font-medium leading-[1.08] tracking-[-0.01em] text-white">
-                  {t.strategy.hallTitle}
-                </h3>
-                <p className="mt-4 text-base leading-[1.62] text-white/78">
-                  {t.strategy.hallDescription}
-                </p>
+              {/* Plate reference — top corner, like a catalogued photograph */}
+              <div className="relative flex items-center justify-between px-6 pt-6 md:px-8 md:pt-8">
+                <span className="overline text-[#d7c7ae]">{card.label}</span>
+                <span className="serif-italic text-lg text-white/55">
+                  {`0${index + 1} / 02`}
+                </span>
               </div>
-            </div>
-          </motion.article>
+
+              <div className="relative mt-auto flex items-end p-6 md:p-8">
+                <div className="max-w-[520px]">
+                  <h3 className="text-[clamp(1.8rem,3.2vw,3rem)] font-medium leading-[1.09] tracking-[-0.01em] text-white text-balance">
+                    {card.title}
+                  </h3>
+                  <p className="mt-4 text-base leading-[1.62] text-white/78">
+                    {card.description}
+                  </p>
+                </div>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

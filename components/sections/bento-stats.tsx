@@ -1,6 +1,8 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+
+import { EntryHeader } from "@/components/entry-header";
 import { useLanguage } from "@/context/LanguageContext";
 
 const fadeUp: Variants = {
@@ -34,53 +36,36 @@ export default function BentoStats() {
 
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-10 md:py-20">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(280px,0.55fr)] md:items-end"
-        >
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-8 bg-[#163a2f]/40" aria-hidden="true" />
-              <p className="overline text-[#163a2f]">{t.hero.focus}</p>
-            </div>
-            <h2 className="max-w-[720px] text-[clamp(2.2rem,5vw,4rem)] font-medium leading-[1.06] tracking-[-0.01em] text-foreground">
-              {t.stats.heading}
-            </h2>
-          </div>
-          <p className="max-w-[440px] text-[17px] leading-[1.65] text-foreground/62">
-            {t.stats.description}
-          </p>
-        </motion.div>
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-24">
+        <EntryHeader
+          index="01"
+          label={t.stats.title}
+          heading={t.stats.heading}
+          description={t.stats.description}
+        />
 
-        <div className="mt-10 grid border-y border-black/10 md:grid-cols-3">
+        {/* Entries stacked as a numbered record */}
+        <div className="mt-14 border-t border-black/10">
           {items.map((item, index) => (
-            <motion.div
+            <motion.article
               key={item.number}
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               custom={0.05 * (index + 1)}
-              className={[
-                "min-h-[170px] py-6 md:py-7",
-                index > 0 ? "border-t border-black/10 md:border-l md:border-t-0" : "",
-                index === 0 ? "md:pr-7" : "md:px-7",
-              ].join(" ")}
+              className="grid gap-4 border-b border-black/10 py-8 md:grid-cols-[auto_minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-12 md:py-10"
             >
-              <p className="serif-italic text-2xl leading-none text-[#163a2f]/45">
+              <span className="serif-italic text-3xl leading-none text-[#163a2f]/40 md:text-4xl">
                 {item.number}
-              </p>
-              <h3 className="mt-3 text-[clamp(1.8rem,3vw,2.75rem)] font-medium leading-[1.1] tracking-[-0.01em] text-[#163a2f]">
+              </span>
+              <h3 className="text-[clamp(1.7rem,2.6vw,2.4rem)] font-medium leading-[1.1] tracking-[-0.01em] text-[#163a2f] text-balance">
                 {item.title}
               </h3>
-              <p className="mt-3 max-w-[320px] text-base leading-[1.6] text-foreground/62">
+              <p className="max-w-[440px] text-[16px] leading-[1.65] text-foreground/62">
                 {item.description}
               </p>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

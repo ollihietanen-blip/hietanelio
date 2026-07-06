@@ -3,6 +3,7 @@ import { Work_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { SideSpine } from "@/components/side-spine";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { LanguageWrapper } from "@/components/language-wrapper";
 
@@ -46,6 +47,7 @@ export default function RootLayout({
         <LanguageProvider>
           <LanguageWrapper>
             <div className="flex min-h-screen flex-col">
+              <SideSpine />
               <Navbar />
               <main className="flex-1">{children}</main>
               <Footer />
