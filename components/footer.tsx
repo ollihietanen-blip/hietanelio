@@ -9,11 +9,12 @@ export function Footer() {
     <footer id="footer" className="scroll-mt-24 bg-[#163a2f] text-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
         <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
-          <div className="max-w-[780px] space-y-3">
-            <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-white/72">
-              {t.footer.title}
-            </p>
-            <h2 className="max-w-[780px] text-[clamp(2.5rem,5.2vw,4.5rem)] font-semibold leading-[1.04] tracking-tight text-white">
+          <div className="max-w-[780px] space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-8 bg-[#d7c7ae]" aria-hidden="true" />
+              <p className="overline text-[#d7c7ae]">{t.footer.title}</p>
+            </div>
+            <h2 className="max-w-[780px] text-[clamp(2.5rem,5.2vw,4.5rem)] font-medium leading-[1.06] tracking-[-0.01em] text-white">
               {t.footer.heading}
             </h2>
             <p className="max-w-[620px] text-[17px] leading-[1.65] text-white/76">

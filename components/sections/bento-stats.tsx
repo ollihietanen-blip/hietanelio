@@ -42,11 +42,12 @@ export default function BentoStats() {
           viewport={{ once: true, margin: "-80px" }}
           className="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(280px,0.55fr)] md:items-end"
         >
-          <div className="space-y-3">
-            <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-foreground/60">
-              {t.hero.focus}
-            </p>
-            <h2 className="max-w-[720px] text-[clamp(2.2rem,5vw,4rem)] font-semibold leading-[1.04] tracking-tight text-foreground">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-8 bg-[#163a2f]/40" aria-hidden="true" />
+              <p className="overline text-[#163a2f]">{t.hero.focus}</p>
+            </div>
+            <h2 className="max-w-[720px] text-[clamp(2.2rem,5vw,4rem)] font-medium leading-[1.06] tracking-[-0.01em] text-foreground">
               {t.stats.heading}
             </h2>
           </div>
@@ -70,10 +71,10 @@ export default function BentoStats() {
                 index === 0 ? "md:pr-7" : "md:px-7",
               ].join(" ")}
             >
-              <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-foreground/35">
+              <p className="serif-italic text-2xl leading-none text-[#163a2f]/45">
                 {item.number}
               </p>
-              <h3 className="mt-2 text-[clamp(2rem,3vw,3rem)] font-semibold leading-[1.08] tracking-tight text-[#163a2f]">
+              <h3 className="mt-3 text-[clamp(1.8rem,3vw,2.75rem)] font-medium leading-[1.1] tracking-[-0.01em] text-[#163a2f]">
                 {item.title}
               </h3>
               <p className="mt-3 max-w-[320px] text-base leading-[1.6] text-foreground/62">

@@ -45,8 +45,8 @@ export function ContactForm({
 
   const borderClass =
     variant === "card"
-      ? "rounded-xl border border-border/80 bg-card/90 p-6 shadow-sm"
-      : "rounded-lg border border-border/70 bg-white/70 p-4";
+      ? "border border-black/10 bg-card p-6 shadow-[var(--shadow-soft)] sm:p-8"
+      : "border border-black/10 bg-card p-6 sm:p-8";
 
   return (
     <form
@@ -59,7 +59,7 @@ export function ContactForm({
         </label>
         <Input id="name" placeholder="Etunimi Sukunimi" {...register("name")} />
         {errors.name && (
-          <p className="mt-1 text-xs text-accent">{errors.name.message}</p>
+          <p className="mt-1 text-xs font-medium text-[#a1221b]">{errors.name.message}</p>
         )}
       </div>
       <div className="grid gap-4 md:grid-cols-2">
@@ -74,7 +74,7 @@ export function ContactForm({
             {...register("email")}
           />
           {errors.email && (
-            <p className="mt-1 text-xs text-accent">{errors.email.message}</p>
+            <p className="mt-1 text-xs font-medium text-[#a1221b]">{errors.email.message}</p>
           )}
         </div>
         <div>
@@ -90,7 +90,7 @@ export function ContactForm({
             {...register("company")}
           />
           {errors.company && (
-            <p className="mt-1 text-xs text-accent">{errors.company.message}</p>
+            <p className="mt-1 text-xs font-medium text-[#a1221b]">{errors.company.message}</p>
           )}
         </div>
       </div>
@@ -107,11 +107,16 @@ export function ContactForm({
           {...register("message")}
         />
         {errors.message && (
-          <p className="mt-1 text-xs text-accent">{errors.message.message}</p>
+          <p className="mt-1 text-xs font-medium text-[#a1221b]">{errors.message.message}</p>
         )}
       </div>
       <div className="flex items-center gap-3">
-        <Button type="submit" size="lg" disabled={status === "submitting"}>
+        <Button
+          type="submit"
+          size="lg"
+          disabled={status === "submitting"}
+          className="min-h-[54px] rounded-none bg-[#163a2f] px-7 text-[15px] font-semibold text-[#edf3ee] hover:bg-[#1d4a3c]"
+        >
           {status === "submitting" ? (
             <>
               <Loader2 className="h-4 w-4 animate-spin" />

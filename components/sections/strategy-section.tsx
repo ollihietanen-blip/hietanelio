@@ -26,11 +26,12 @@ export default function StrategySection() {
           viewport={{ once: true, margin: "-80px" }}
           className="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(280px,0.55fr)] md:items-end"
         >
-          <div className="space-y-3">
-            <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-foreground/60">
-              {t.strategy.title}
-            </p>
-            <h2 className="max-w-[720px] text-[clamp(2.2rem,5vw,4rem)] font-semibold leading-[1.04] tracking-tight text-foreground">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-8 bg-[#163a2f]/40" aria-hidden="true" />
+              <p className="overline text-[#163a2f]">{t.strategy.title}</p>
+            </div>
+            <h2 className="max-w-[720px] text-[clamp(2.2rem,5vw,4rem)] font-medium leading-[1.06] tracking-[-0.01em] text-foreground">
               {t.strategy.heading}
             </h2>
           </div>
@@ -58,10 +59,10 @@ export default function StrategySection() {
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,24,20,0.02)_0%,rgba(8,24,20,0.78)_100%),linear-gradient(90deg,rgba(8,24,20,0.38),rgba(8,24,20,0.03))]" />
             <div className="relative flex min-h-[350px] items-end p-6 md:min-h-[460px] md:p-8">
               <div className="max-w-[520px]">
-                <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-[#d7c7ae]">
+                <p className="overline mb-4 text-[#d7c7ae]">
                   {t.strategy.apartmentLabel}
                 </p>
-                <h3 className="text-[clamp(2rem,3.5vw,3.5rem)] font-semibold leading-[1.06] tracking-tight text-white">
+                <h3 className="text-[clamp(1.9rem,3.5vw,3.25rem)] font-medium leading-[1.08] tracking-[-0.01em] text-white">
                   {t.strategy.apartmentTitle}
                 </h3>
                 <p className="mt-4 text-base leading-[1.62] text-white/78">
@@ -89,10 +90,10 @@ export default function StrategySection() {
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,24,20,0.06)_0%,rgba(8,24,20,0.76)_100%),linear-gradient(90deg,rgba(8,24,20,0.28),rgba(8,24,20,0.04))]" />
             <div className="relative flex min-h-[350px] items-end p-6 md:min-h-[460px] md:p-8">
               <div className="max-w-[520px]">
-                <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-[#d7c7ae]">
+                <p className="overline mb-4 text-[#d7c7ae]">
                   {t.strategy.hallLabel}
                 </p>
-                <h3 className="text-[clamp(2rem,3.5vw,3.5rem)] font-semibold leading-[1.06] tracking-tight text-white">
+                <h3 className="text-[clamp(1.9rem,3.5vw,3.25rem)] font-medium leading-[1.08] tracking-[-0.01em] text-white">
                   {t.strategy.hallTitle}
                 </h3>
                 <p className="mt-4 text-base leading-[1.62] text-white/78">

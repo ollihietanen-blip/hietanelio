@@ -41,12 +41,13 @@ export default function HeroSection() {
           className="w-full max-w-[680px] border-l border-[#d7c7ae]/70 pl-5 sm:pl-7"
           suppressHydrationWarning
         >
-          <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.16em] text-[#d7c7ae] sm:mb-5">
-            Hietaneliö Oy
-          </p>
-          <h1 className="max-w-[560px] text-[clamp(2.5rem,7vw,5rem)] font-semibold leading-[0.98] tracking-tight text-white">
+          <div className="mb-5 flex items-center gap-3 sm:mb-6">
+            <span className="h-px w-8 bg-[#d7c7ae]" aria-hidden="true" />
+            <p className="overline text-[#d7c7ae]">Hietaneliö Oy</p>
+          </div>
+          <h1 className="max-w-[600px] text-[clamp(2.6rem,7vw,5.25rem)] font-medium leading-[1.02] tracking-[-0.01em] text-white">
             <span className="block">{t.hero.title1}</span>
-            <span className="block">{t.hero.title2}</span>
+            <span className="serif-italic block text-[#e6d8bf]">{t.hero.title2}</span>
           </h1>
           <motion.p
             variants={fadeUp}

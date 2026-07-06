@@ -47,7 +47,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-body), "Work Sans", system-ui, -apple-system, sans-serif;
+  font-family: var(--font-display), "Playfair Display", Georgia, "Times New Roman", serif;
+  font-feature-settings: "kern", "liga";
 }
 
 a {
@@ -55,7 +56,7 @@ a {
 }
 
 ::selection {
-  background: rgba(180, 83, 9, 0.12);
+  background: rgba(22, 58, 47, 0.14);
   color: var(--color-foreground);
 }
 
@@ -67,4 +68,24 @@ a {
 
 .soft-shadow {
   box-shadow: var(--shadow-soft);
+}
+
+/* Editorial helpers */
+.overline {
+  font-family: var(--font-body), "Work Sans", system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.rule-hair {
+  height: 1px;
+  background: currentColor;
+  opacity: 0.16;
+}
+
+.serif-italic {
+  font-family: var(--font-display), "Playfair Display", Georgia, serif;
+  font-style: italic;
 }
