@@ -19,14 +19,14 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Hietaneliö Oy | Luotettava tausta kohteelle",
+  title: "Hietaneliö Oy | Omistaja, rakennuttaja ja sijoittaja",
   description:
-    "Hietaneliö Oy on Kankaanpäästä toimiva kiinteistö- ja kehitysyhtiö, jonka sivu auttaa ostajaa varmistamaan kohteen taustan.",
+    "Hietaneliö Oy on kankaanpääläinen kiinteistöyhtiö, joka toimii osana Area Group -yrityskonsortiota ja yhdistää omistamisen, rakennuttamisen, sijoittamisen ja hankekehityksen.",
   metadataBase: new URL("https://hietanelio.fi"),
   openGraph: {
     title: "Hietaneliö Oy",
     description:
-      "Luotettava tausta asunto- ja hallikohteille Kankaanpäästä.",
+      "Kankaanpäästä toimiva kiinteistöyhtiö, joka yhdistää omistamisen, rakennuttamisen, sijoittamisen ja hankekehityksen.",
     url: "https://hietanelio.fi",
     locale: "fi_FI",
     siteName: "Hietaneliö Oy",

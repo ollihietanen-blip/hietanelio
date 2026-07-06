@@ -44,7 +44,7 @@ export function Footer() {
       <div className="border-t border-white/10 bg-[#101a16]">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-white/70 sm:px-6 md:flex-row md:items-center md:justify-between md:px-10">
           <span>Hietaneliö Oy</span>
-          <span>Kuninkaanlähteenkatu 8, 38700 Kankaanpää</span>
+          <span>Kuninkaanlähteenkatu 8, 38700 Kankaanpää • Koulukatu 13 C 36, 33200 Tampere</span>
           <span>{t.footer.billingId}</span>
         </div>
       </div>

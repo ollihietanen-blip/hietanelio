@@ -9,11 +9,11 @@ export default function YhteystiedotPage() {
           Yhteystiedot
         </p>
         <h1 className="text-4xl text-foreground md:text-5xl">
-          Ota yhteyttä – vastataan nopeasti.
+          Ota yhteyttä kohteesta tai hankkeesta.
         </h1>
         <p className="text-lg text-foreground/75">
-          Kerro, mitä kohdetta olet arvioimassa tai mitä haluat varmistaa.
-          Saat vastauksen, joka auttaa jatkamaan päätöstä eteenpäin.
+          Kysy kohteesta, hankkeesta tai Hietaneliön roolista. Tavoite on
+          tehdä seuraavasta päätöksestä selkeämpi, ei monimutkaisempi.
         </p>
       </div>
 
@@ -23,19 +23,19 @@ export default function YhteystiedotPage() {
             <CardHeader>
               <CardTitle className="text-xl">Yhteyshenkilöt</CardTitle>
               <p className="text-sm text-foreground/70">
-                Suora yhteys päätöksentekijöihin.
+                Suora yhteys, kun haluat varmistaa taustan tai kysyä hankkeesta.
               </p>
             </CardHeader>
             <CardContent className="space-y-3 text-sm text-foreground/80">
               <div>
-              <p className="font-medium text-foreground">Olli Hietanen</p>
-                <p>Toimitusjohtaja · Kiinteistö- ja hankekysymykset</p>
-                <p>Asunto-, halli- ja kehityskohteiden taustat sekä eteneminen.</p>
+                <p className="font-medium text-foreground">Olli Hietanen</p>
+                <p>Toimitusjohtaja · Kiinteistösijoittaminen ja hankkeet</p>
+                <p>Yhteys kiinteistöihin, hankkeisiin ja kohteiden taustan varmistamiseen.</p>
               </div>
               <div>
                 <p className="font-medium text-foreground">Terhi Hietanen</p>
                 <p>Hallitus · Vastuullisuus ja hallinto</p>
-                <p>Ylläpito, hallinto ja pitkäjänteinen kohteiden kehittäminen.</p>
+                <p>Yhteys hallintoon, vastuullisuuteen ja pitkäjänteiseen ylläpitoon.</p>
               </div>
             </CardContent>
           </Card>
@@ -44,13 +44,14 @@ export default function YhteystiedotPage() {
             <CardHeader>
               <CardTitle className="text-xl">Laskutustiedot</CardTitle>
               <p className="text-sm text-foreground/70">
-                Taloushallinnon tiedot B2B-kumppaneille.
+                Viralliset laskutustiedot ja yrityksen perustiedot.
               </p>
             </CardHeader>
             <CardContent className="space-y-2 text-sm text-foreground/80">
               <p className="font-medium text-foreground">Hietaneliö Oy</p>
               <p>Y-tunnus: 2954838-7</p>
-              <p>Osoite: Kankaanpää, Satakunta, Suomi</p>
+              <p>Kuninkaanlähteenkatu 8, 38700 Kankaanpää</p>
+              <p>Koulukatu 13 C 36, 33200 Tampere</p>
               <p>
                 Laskutus: ensisijaisesti verkkolasku tai PDF laskutusosoitteeseen
                 toimitettuna.

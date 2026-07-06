@@ -2,22 +2,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const assets = [
   {
-    name: "Teollisuus- ja varastokohteet",
-    location: "Kankaanpää, Satakunta",
+    name: "Asuinkiinteistöt ja asumisen hankkeet",
+    location: "Rakentaminen ja kehittäminen",
     focus:
-      "Joustavat tilaratkaisut kasvaville vuokralaisille. Modernit talotekniikka- ja turvallisuusratkaisut.",
+      "Rakentamiseen liittyvä tausta tukee kuvaa toimijasta, joka tuntee myös kodit, rivitalot ja asumisen kehityshankkeet.",
   },
   {
-    name: "Toimistot ja palvelutilat",
-    location: "Keskusta-alue",
+    name: "Toimitilat, hallit ja teollisuuskohteet",
+    location: "Yrityksille ja toimijoille",
     focus:
-      "Hyvä saavutettavuus, viihtyisä työympäristö ja energiatehokkaat ratkaisut. Räätälöidään yhdessä vuokralaisen kanssa.",
+      "Yritystilat, hallit ja käytännön toimivuus ovat osa samaa kokonaisuutta kuin omistaminen ja hankekehitys.",
   },
   {
-    name: "Tontit ja kehityskohteet",
-    location: "Satakunta",
+    name: "Kehityshankkeet ja sijoittaminen",
+    location: "Omistus, kumppanuus ja seuraava vaihe",
     focus:
-      "Etsimme kumppaneita yhteiskehitykseen. Ennakoitava kustannusrakenne ja läpinäkyvä hankemalli.",
+      "Hietaneliö on mukana kohteissa, joita kehitetään pitkäaikaisesti omistukseen tai kohdekohtaisesti eteenpäin.",
   },
 ];
 
@@ -29,11 +29,13 @@ export default function KiinteistotPage() {
           Kiinteistöt
         </p>
         <h1 className="text-4xl text-foreground md:text-5xl">
-          Portfolio ja kehityskohteet
+          Kiinteistöjä, hankkeita ja käytännön rooleja
         </h1>
         <p className="text-lg text-foreground/75">
-          Keskitymme Satakunnan alueeseen, jossa läsnäolo ja nopea päätöksenteko
-          pitävät vuokralaiset ja rahoittajat turvassa.
+          Hietaneliön toimintaan kuuluvat toimitila-, teollisuus- ja
+          asuinkiinteistöihin liittyvät omistukset sekä uudisrakennus- ja
+          kehityshankkeet. Taustalla on myös rakennuttamista, yritystilojen
+          toteutusta ja käytännön hankekokemusta.
         </p>
       </div>
 
@@ -56,14 +58,13 @@ export default function KiinteistotPage() {
 
       <div className="mt-12 rounded-xl border border-border/80 bg-primary/10 p-6 text-sm text-foreground/80">
         <p className="text-lg text-foreground">
-          Etsitkö uutta toimitilaa tai yhteissijoitusta?
+          Keskustellaan kohteesta, hankkeesta tai yhteistyöstä.
         </p>
         <p className="mt-2">
-          Ota yhteyttä, niin räätälöidään ratkaisu ja esitetään kassavirta- ja
-          remonttisuunnitelma rahoittajan tarvitsemalla tarkkuudella.
+          Ota yhteyttä, jos haluat tarkentaa Hietaneliön roolia kohteessa tai
+          avata hanketta omistamisen, rakennuttamisen tai kumppanuuden näkökulmasta.
         </p>
       </div>
     </div>
   );
 }
-

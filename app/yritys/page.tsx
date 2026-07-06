@@ -4,12 +4,12 @@ const people = [
   {
     name: "Olli Hietanen",
     role: "Toimitusjohtaja",
-    bio: "Vastaa sijoitusstrategiasta, rahoittajasuhteista ja kiinteistöjen kehityksestä. Keskittyy vakaaseen kassavirtaan ja riskienhallintaan.",
+    bio: "Yrittäjä ja rakentamisen kehittäjä, jonka työssä yhdistyvät kiinteistöt, yritystilat, kestävä rakentaminen, digitalisaatio ja hankkeiden johtaminen.",
   },
   {
     name: "Terhi Hietanen",
     role: "Hallituksen jäsen",
-    bio: "Huolehtii hallinnon läpinäkyvyydestä, vastuullisuudesta ja pitkäaikaisista vuokrasuhteista. Korostaa kestävää omistajuutta.",
+    bio: "Huolehtii hallinnon, vastuullisuuden ja pitkäjänteisen omistamisen arjen jatkuvuudesta.",
   },
 ];
 
@@ -21,48 +21,47 @@ export default function YritysPage() {
           Yritys
         </p>
         <h1 className="text-4xl text-foreground md:text-5xl">
-          Pitkäjänteinen kiinteistöomistaja Satakunnassa.
+          Omistaja, rakennuttaja, sijoittaja ja kumppani.
         </h1>
         <p className="text-lg text-foreground/75">
-          Hietaneliö Oy perustettiin palvelemaan rahoittajia ja vuokralaisia
-          samalla periaatteella: vakaus ennen kaikkea. Kehitämme kiinteistöjä
-          konservatiivisella velkavivulla, huolellisella kunnossapidolla ja
-          avoimella raportoinnilla.
+          Hietaneliö Oy on kankaanpääläinen kiinteistöyhtiö, joka toimii osana
+          Area Group -yrityskonsortiota. Toiminnassa yhdistyvät pitkäjänteinen
+          omistaminen, kehityshankkeet, rakennuttaminen, yritystilojen
+          toteutus, kestävä rakentaminen ja kiinteistöalan yrittäjyys.
         </p>
       </div>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         <Card className="border-border/80 bg-card/90 shadow-sm">
           <CardHeader>
-            <CardTitle className="text-2xl">Omistajastrategia</CardTitle>
+            <CardTitle className="text-2xl">Kiinteistöt ja sijoittaminen</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3 text-foreground/75">
             <p>
-              Omistamme ja kehitämme kiinteistöjä pitkäksi ajaksi.
-              Energiatehokkuus, sisäilman laatu ja materiaalien kestävyys ovat
-              perusvaatimuksia, ei poikkeuksia.
+              Hietaneliö on mukana kiinteistöomistuksissa, kiinteistöyhtiöissä
+              ja kehityshankkeissa. Toiminnan ytimessä ovat pitkäjänteisyys,
+              harkittu eteneminen ja omistamisen näkökulma.
             </p>
             <p>
-              Vältämme ylimitoitettua velkaa ja ylläpidämme riittävät
-              puskurit, jotta vuokralaiset ja rahoittajat voivat luottaa
-              tasaisiin suorituksiin suhdanteista riippumatta.
+              Osa kohteista jää pitkäaikaiseen omistukseen ja osa toteutetaan
+              myyntiä tai seuraavaa kehitysvaihetta varten.
             </p>
           </CardContent>
         </Card>
 
         <Card className="border-border/80 bg-card/90 shadow-sm">
           <CardHeader>
-            <CardTitle className="text-2xl">Yhteistyö rahoittajien kanssa</CardTitle>
+            <CardTitle className="text-2xl">Rakennuttaminen ja kehittäminen</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3 text-foreground/75">
             <p>
-              Raportoimme tunnusluvut läpinäkyvästi ja pidämme kassavirran
-              ennakoitavana. 54 % liikevoitto ja 28 % omavaraisuusaste
-              kertovat hallitusta riskitasosta.
+              Taustalla on kokemusta yritysten tiloista, asumisen hankkeista,
+              historiallisten rakennusten kehittämisestä sekä kohteiden
+              suunnittelun ja rakentamisen johtamisesta.
             </p>
             <p>
-              Kasvu on harkittua: priorisoimme nykyisen portfolion
-              parantamisen ennen uusien kohteiden lisäämistä.
+              Digitaalinen ajattelu, automaatio ja kestävä rakentaminen tuovat
+              toimintaan nykyaikaisen mutta käytännönläheisen sävyn.
             </p>
           </CardContent>
         </Card>
@@ -88,4 +87,3 @@ export default function YritysPage() {
     </div>
   );
 }
-
