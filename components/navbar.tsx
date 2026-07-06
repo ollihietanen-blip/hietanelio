@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, Globe } from "lucide-react";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -13,12 +14,16 @@ import { useLanguage } from "@/context/LanguageContext";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const isTransparent = isHome && !isScrolled;
+  const sectionHref = (hash: string) => (isHome ? hash : `/${hash}`);
 
   const links = [
-    { href: "#hero", label: t.nav.home },
-    { href: "#stats", label: t.nav.stats },
-    { href: "#strategy", label: t.nav.strategy },
-    { href: "/yhteystiedot", label: t.nav.contact },
+    ...(isHome ? [] : [{ href: "/", label: t.nav.home }]),
+    { href: sectionHref("#stats"), label: t.nav.stats },
+    { href: sectionHref("#strategy"), label: t.nav.strategy },
+    { href: isHome ? "#footer" : "/yhteystiedot", label: t.nav.contact },
   ];
 
   useEffect(() => {
@@ -35,7 +40,9 @@ export function Navbar() {
         variant === "desktop"
           ? cn(
               "text-base font-medium transition-colors",
-              "text-foreground/70 hover:text-foreground",
+              isTransparent
+                ? "text-white/86 hover:text-[#d7c7ae]"
+                : "text-foreground/72 hover:text-foreground",
             )
           : cn(
               "text-lg font-medium",
@@ -51,25 +58,26 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 border-b backdrop-blur-xl transition-all duration-300",
-        isScrolled
-          ? "bg-white/95 border-border shadow-sm"
-          : "bg-white/75 border-border/70"
+        isHome ? "fixed inset-x-0 top-0 z-40" : "sticky top-0 z-40",
+        "transition-all duration-300",
+        isTransparent
+          ? "border-transparent bg-transparent"
+          : "border-b border-border/80 bg-white/92 shadow-sm backdrop-blur-xl"
       )}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
-        <Link href="/" className="flex items-center gap-3">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 md:px-10 md:py-4">
+        <Link href="/" className="flex items-center">
           <Image
-            src="/hm2_png.png"
+            src="/hietanelio-logo-hm2-cropped.png"
             alt="Hietaneliö Oy"
-            width={36}
-            height={36}
-            className="h-9 w-9 object-contain"
+            width={86}
+            height={78}
+            className={cn(
+              "h-auto w-[72px] object-contain md:w-[86px]",
+              isTransparent && "brightness-0 invert",
+            )}
             priority
           />
-          <span className="text-xl text-foreground font-semibold uppercase tracking-tight">
-            Hietaneliö
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">{renderLinks()}</nav>
@@ -79,7 +87,10 @@ export function Navbar() {
             variant="ghost"
             size="sm"
             onClick={() => setLanguage(language === "fi" ? "en" : "fi")}
-            className="hidden md:inline-flex items-center gap-2"
+            className={cn(
+              "hidden items-center gap-2 md:inline-flex",
+              isTransparent && "text-white hover:bg-white/10 hover:text-white",
+            )}
             aria-label={language === "fi" ? "Switch to English" : "Vaihda suomeksi"}
           >
             <Globe className="h-4 w-4" />
@@ -88,7 +99,12 @@ export function Navbar() {
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" aria-label={language === "fi" ? "Avaa valikko" : "Open menu"}>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className={cn(isTransparent && "text-white hover:bg-white/10 hover:text-white")}
+                  aria-label={language === "fi" ? "Avaa valikko" : "Open menu"}
+                >
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
@@ -112,4 +128,3 @@ export function Navbar() {
     </header>
   );
 }
-

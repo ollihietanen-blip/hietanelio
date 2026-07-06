@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, useSyncExternalStore, ReactNode } from "react";
 import { Language, translations } from "@/lib/translations";
 
 type TranslationKeys = typeof translations[Language];
@@ -12,26 +12,52 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LANGUAGE_STORAGE_KEY = "language";
+const LANGUAGE_EVENT = "hietanelio-language-change";
+
+function isLanguage(value: string | null): value is Language {
+  return value === "fi" || value === "en";
+}
+
+function getLanguageSnapshot(): Language {
+  if (typeof window === "undefined") {
+    return "fi";
+  }
+
+  const savedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+  return isLanguage(savedLanguage) ? savedLanguage : "fi";
+}
+
+function subscribe(callback: () => void) {
+  if (typeof window === "undefined") {
+    return () => undefined;
+  }
+
+  const handleChange = () => callback();
+
+  window.addEventListener("storage", handleChange);
+  window.addEventListener(LANGUAGE_EVENT, handleChange);
+
+  return () => {
+    window.removeEventListener("storage", handleChange);
+    window.removeEventListener(LANGUAGE_EVENT, handleChange);
+  };
+}
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  // Always start with "fi" to match server render
-  const [language, setLanguageState] = useState<Language>("fi");
-  const [isHydrated, setIsHydrated] = useState(false);
-
-  // Load language from localStorage after hydration
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") as Language | null;
-    if (savedLanguage && (savedLanguage === "fi" || savedLanguage === "en")) {
-      setLanguageState(savedLanguage);
-    }
-    setIsHydrated(true);
-  }, []);
+  const language = useSyncExternalStore<Language>(
+    subscribe,
+    getLanguageSnapshot,
+    () => "fi",
+  );
 
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
-    if (isHydrated) {
-      localStorage.setItem("language", lang);
+    if (typeof window === "undefined") {
+      return;
     }
+
+    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+    window.dispatchEvent(new Event(LANGUAGE_EVENT));
   };
 
   const t = translations[language];
@@ -50,4 +76,3 @@ export function useLanguage() {
   }
   return context;
 }
-

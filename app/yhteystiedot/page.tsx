@@ -12,8 +12,8 @@ export default function YhteystiedotPage() {
           Ota yhteyttä – vastataan nopeasti.
         </h1>
         <p className="text-lg text-foreground/75">
-          Kerro tilatarpeesi tai rahoituskumppanuuden tarve. Saat
-          vastauksen, joka sisältää aikataulun ja etenemisen.
+          Kerro, mitä kohdetta olet arvioimassa tai mitä haluat varmistaa.
+          Saat vastauksen, joka auttaa jatkamaan päätöstä eteenpäin.
         </p>
       </div>
 
@@ -28,14 +28,14 @@ export default function YhteystiedotPage() {
             </CardHeader>
             <CardContent className="space-y-3 text-sm text-foreground/80">
               <div>
-                <p className="font-medium text-foreground">Olli Hietanen</p>
-                <p>Toimitusjohtaja · Kiinteistösijoittaminen</p>
-                <p>Vaiheittainen kehitysmalli ja rahoitusratkaisut.</p>
+              <p className="font-medium text-foreground">Olli Hietanen</p>
+                <p>Toimitusjohtaja · Kiinteistö- ja hankekysymykset</p>
+                <p>Asunto-, halli- ja kehityskohteiden taustat sekä eteneminen.</p>
               </div>
               <div>
                 <p className="font-medium text-foreground">Terhi Hietanen</p>
                 <p>Hallitus · Vastuullisuus ja hallinto</p>
-                <p>Pitkäjänteinen ylläpito ja vuokralaiskokemus.</p>
+                <p>Ylläpito, hallinto ja pitkäjänteinen kohteiden kehittäminen.</p>
               </div>
             </CardContent>
           </Card>
@@ -66,4 +66,3 @@ export default function YhteystiedotPage() {
     </div>
   );
 }
-

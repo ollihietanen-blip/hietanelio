@@ -12,7 +12,7 @@ export default function HomePage() {
 
         <section
           id="stats"
-          aria-label="Taloudelliset tunnusluvut"
+          aria-label="Luottamusta vahvistavat perustelut"
           className="scroll-mt-24"
         >
           <BentoStats />
@@ -20,7 +20,7 @@ export default function HomePage() {
 
         <section
           id="strategy"
-          aria-label="Sijoitusstrategia"
+          aria-label="Asunnon ja hallin ostajalle"
           className="scroll-mt-24"
         >
           <StrategySection />

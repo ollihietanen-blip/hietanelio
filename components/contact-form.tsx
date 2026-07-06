@@ -103,7 +103,7 @@ export function ContactForm({
         </label>
         <Textarea
           id="message"
-          placeholder="Kuvaa tilatarpeesi tai yhteistyöidea lyhyesti."
+          placeholder="Kuvaa kohde tai kysymys lyhyesti."
           {...register("message")}
         />
         {errors.message && (
@@ -133,4 +133,3 @@ export function ContactForm({
     </form>
   );
 }
-
